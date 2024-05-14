@@ -1,7 +1,9 @@
 const container = document.querySelector(".container"),
   qrInput = container.querySelector(".form input"),
   generateBtn = container.querySelector(".form button"),
-  qrImg = container.querySelector(".qr-code img");
+  qrImg = container.querySelector(".qr-code img"),
+  downloadBtn = container.querySelector(".download-btn");
+
 let preValue;
 
 generateBtn.addEventListener("click", () => {
@@ -14,6 +16,16 @@ generateBtn.addEventListener("click", () => {
     container.classList.add("active");
     generateBtn.innerText = "Generate QR Code";
   });
+});
+
+downloadBtn.addEventListener("click", () => {
+  const imgData = qrImg.src;
+  const link = document.createElement("a");
+  link.href = imgData;
+  link.download = "qr-code.png";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 });
 
 qrInput.addEventListener("keyup", () => {
