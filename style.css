@@ -7,24 +7,26 @@
 }
 
 body {
-  display: flex;
   padding: 0 10px;
-  /* min-height: 100vh; */
   height: 100vh;
-  align-items: center;
   background: linear-gradient(150deg, #171717 50%, orange 50%);
-  justify-content: center;
-  color: #fff;
+  color: #fff; 
 }
 
 .container {
   height: 265px;
-  width: 510px;
-  background: #222;
+  width: 410px;
+  background: rgba(34, 34, 34, 0.281);
+  backdrop-filter: blur(60px);
   border-radius: 7px;
   padding: 20px 25px 0;
   transition: height 0.2s ease;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  
 }
 
 .container.active {
@@ -61,7 +63,7 @@ header p {
   padding: 0 17px;
   border: 1px solid #999;
   color: #fff;
-  background: #333;
+  background: rgba(51, 51, 51, 0.281);
 }
 
 .form input:focus {
@@ -77,12 +79,12 @@ header p {
   cursor: pointer;
   margin-top: 20px;
   font-size: 17px;
-  background: #444;
-  transition: background 0.3s ease, transform 0.2s ease;
+  background: rgba(68, 68, 68, 0.356);
+ 
 }
 
 .form button:hover {
-  background: #333;
+  background: rgba(68, 68, 68, 0.356);
 }
 
 .form button:active {
@@ -97,7 +99,7 @@ header p {
   align-items: center;
   pointer-events: none;
   justify-content: center;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(204, 204, 204, 0.157);
 }
 
 .container.active .qr-code {
@@ -110,10 +112,36 @@ header p {
   width: 170px;
 }
 
+.footer {
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  padding: 2rem 0;
+  position: fixed;
+  bottom: 0; 
+  width: 100%;  
+}
+
+.footer__social {
+  margin-bottom: .75rem;
+}
+
+.footer__icon {
+  font-size: 1.3rem;
+  color: #fff;
+  margin: 0 .75rem;
+  
+}
+
+.footer__copy {
+  font-size:1rem;
+}
+
+
 @media screen and (max-width: 600px) {
   .container {
     height: 255px;
-    width: 500px;
+    width: 300px;
     padding: 16px 20px;
   }
   .container.active {
@@ -129,5 +157,6 @@ header p {
     width: 160px;
   }
 }
+
 
 
